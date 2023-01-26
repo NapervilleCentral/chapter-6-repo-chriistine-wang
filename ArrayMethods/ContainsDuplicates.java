@@ -2,10 +2,24 @@ public class ContainsDuplicates
 {
    public boolean containsDuplicates(int[] arr)
    {
-      // Assume no dupes.
-      boolean dupes = false;
-
-
+      boolean dupes = false;    
+      // avoid doing more processing/memory than necessary
+      for (int s: arr)
+      {
+          int count = 0;
+          System.out.println(s);
+          for (int w: arr)
+          {
+              if (s == w)
+              {
+                  count++;
+                  if (count>1)
+                      return true;
+              }
+                  
+          }
+      }
+      return dupes;
    }
 
    public static void main(String[] args)

@@ -4,7 +4,16 @@ public class AdjacentDupes
    {
       // Assume no adjacent dupes.
       boolean adjDupes = false;
-
+      int cache = 0;
+      for (int s : arr)
+      {
+          if (s == cache)
+          {
+              return true;
+          }
+          cache = s;
+      }
+      return false;
       // Loop through array, checking for duplicates
       // next to each other.
 

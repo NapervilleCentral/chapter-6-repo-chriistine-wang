@@ -11,6 +11,9 @@ public class Searches
    //  a linear search. The index where the element was found is
    //  returned, or -1 if the element is not found.
    //-----------------------------------------------------------------
+   // if 2 instances, returns first instance
+   // does  not have to be sorted first
+   // good for speech
    public static int linearSearch (int[] numbers, int key)
    {
       for (int index = 0; index < numbers.length; index++)
@@ -23,7 +26,7 @@ public class Searches
    //  Searches the array of integers for the specified element using
    //  a binary search. The index where the element was found is
    //  returned, or -1 if the element is not found.
-   //  NOTE: The array must be sorted!
+   //  NOTE: The array must be sorted in order to use a binary search
    //-----------------------------------------------------------------
    public static int binarySearch (int[] numbers, int key)
    {
@@ -37,7 +40,8 @@ public class Searches
             low = middle + 1;
          middle = (low + high) / 2;
       }
-
+      //moves the high, recalcs middle. (think of number line)
+      
       if (numbers[middle] == key)
          return middle;
       else

@@ -5,6 +5,46 @@ public class ReplaceWithLargestNeighbor
    public void replaceWithLargestNeighbor(int[] arr)
    {
       // Start loop at one, and stop before the end
+      int temp;
+      int count =0;
+      for (int s: arr)
+      {
+         if (count == 0)
+             {
+                 if (arr[count+1] > arr[count])
+                     {
+                         temp = arr[count];
+                         arr[count] = arr[count+1];
+                         arr[count+1] = temp;
+                     }
+             }
+         else if (arr[count] < 9)
+         {
+                 if (arr[count-1] > arr[count+1])
+                     {
+                         temp = s;
+                         arr[count] = arr[count-1];
+                         arr[count-1] = temp;
+                     }
+                 else
+                 {
+                     temp = s;
+                     arr[count] = arr[count+1];
+                     arr[count+1] = temp;
+                 }
+             }
+         else
+         {
+            if (arr[count-1] > arr[count])
+                 {
+                     temp = s;
+                     arr[count] = arr[count-1];
+                     arr[count] = temp;
+                 }
+         }
+         count++;
+        }
+      
 
    }
 

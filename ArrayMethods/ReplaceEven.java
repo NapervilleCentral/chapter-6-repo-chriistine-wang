@@ -4,8 +4,19 @@ public class ReplaceEven
 {
    public void replaceEven(int[] arr)
    {
-
-
+        /**int[] evenArr = new int[arr.length];
+        for (int s: arr)
+        {
+            if (!(s % 2 == 0))
+                evenArr = 
+                
+                            
+        } */
+        
+        for(int x = 0; x < arr.length; x++)
+            if (s % 2 == 0)
+                arr
+            
 
    }
 

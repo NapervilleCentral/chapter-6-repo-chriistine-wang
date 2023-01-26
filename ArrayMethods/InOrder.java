@@ -4,8 +4,21 @@ public class InOrder
    {
       // Assume they are in order.
       boolean ordered = true;
-
-   }
+      int temp = 0;
+      for (int s: arr)
+      {
+          System.out.println(s);
+          if (s >= temp)
+              ordered = true;
+          else
+          {
+              ordered = false;
+              return ordered;
+          }
+          temp = s;
+      }
+      return ordered;
+    }
 
    public static void main(String[] args)
    {
@@ -16,22 +29,22 @@ public class InOrder
       // Check if array 1 is ordered or not.
       if (util.inOrder(arrOrder))
       {
-         System.out.println("The array is in order.");
+         System.out.println("ar1 array is in order.");
       }
       else
       {
-         System.out.println("The array is NOT in order.");
+         System.out.println("ar1 array is NOT in order.");
       }
       System.out.println("Expected: The array is in order.");
 
       // Check if array 2 is ordered or not.
       if (util.inOrder(arrNotOrder))
       {
-         System.out.println("The array is in order.");
+         System.out.println("ar2 array is in order.");
       }
       else
       {
-         System.out.println("The array is NOT in order.");
+         System.out.println("ar2 array is NOT in order.");
       }
       System.out.println("Expected: The array is NOT in order.");
    }

@@ -67,11 +67,17 @@ for(int s: oddnums)
     System.out.println(s+"*");
     
     //go over Searches Monday
+    
 
-    /*
-        System.out.println(Searches.linearSearch(num,look)  );
-        Sorts.selectionSort(num);
-        System.out.println(Searches.binarySearch(num,look)  );
+    /**/
+        //searches array for that value, when it finds val, returns index of location (8th num in arr)
+        int look = 70;
+        System.out.println("expected 8"  );
+        System.out.println(Searches.linearSearch(nums2,look)  );
+        Sorts.selectionSort(nums2);
+        look = 55;
+        System.out.println("expected -1");
+        System.out.println(Searches.binarySearch(nums2,look)  );
 
 
 /*
