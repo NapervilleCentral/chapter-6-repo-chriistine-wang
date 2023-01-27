@@ -10,7 +10,7 @@ public class Sorts
    //-----------------------------------------------------------------
    //  Sorts the specified array of integers using the selection
    //  sort algorithm
-   .. mkjm
+    
    //-----------------------------------------------------------------
    public static void selectionSort (int[] numbers)
    {
