@@ -27,23 +27,24 @@ public class MagicSquareTest
     {10,18, 1,14,22},
     {23, 6,19, 2,15}  };
     MagicSquare util= new MagicSquare(square1);
+    
     if (util.isMagic())
     System.out.println("It's MAGIC!! With a sum of "+ 
-    useful.getMagicNum());
+    util.getMagicNum());
     else
     System.out.println("Hello muggle");
     //change the 2D array and retest
     util.setMagicSquare(square2);
     if (util.isMagic())
     System.out.println("It's MAGIC!! With a sum of "+ 
-    useful.getMagicNum());
+    util.getMagicNum());
     else
     System.out.println("Hello muggle");
     //change the 2D array and retest
     util.setMagicSquare(square3);
     if (util.isMagic())
     System.out.println("It's MAGIC!! With a sum of "+ 
-    useful.getMagicNum());
+    util.getMagicNum());
     else
     System.out.println("Hello muggle");
 }//end of main
