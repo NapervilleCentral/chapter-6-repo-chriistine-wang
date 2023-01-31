@@ -7,10 +7,11 @@
  */
 public class MagicSquare
 {
-     
-    public MagicSquare(int [] [] array)
+    private int[][] square;
+    
+    public MagicSquare(int [][] array)
     {
-        
+        square = array;
     }
     
     public boolean isMagic()
@@ -23,13 +24,13 @@ public class MagicSquare
         
     }
     
-    public void setMagicSquare(int [] [] array)
+    public void setMagicSquare(int [][] array)
     {
         
     }
     // support methods
     
-    public int addRows(int row)
+    public int addRow(int row)
     {
         
     }
@@ -41,7 +42,12 @@ public class MagicSquare
     
     public int addColumn(int col)
     {
-        
+        int sum = 0;
+        for (int i = 0; i < square.length-1; i++)
+        {
+            sum += square[i][col];
+            
+        }
     }
     
     public int[] addColumns()
