@@ -21,7 +21,6 @@ public class MagicSquare
     public boolean isMagic()
     {
         
-        
     }
     
     public int getMagicNum()// gets the magic number of 1 row/col/diag, etc
@@ -40,44 +39,55 @@ public class MagicSquare
     public int addRow(int row)
     {
         int rowSum = 0;
-        for (int col = 0; col < numRows; col++)
+        for (int i = 0; i < numCols; i++)
         {
-            rowSum += square[row][col];
+            rowSum += square[row][i];
         }
         return rowSum;
     }
     
     public int[] addRows()
     {
-        int cache = 0;
+        int[] rowSums = new int[numRows];
+        
         for (int i = 0; i < numRows; i++)
         {
-            if (addRow(i) == cache)
-            {
-                
-            }
-            else
-            {
-                
-            }
-            cache = this.addRow(i);
-            
+            rowSums[i] = addRow(i);
         }
+        return rowSums;
     }
     
     public int addColumn(int col)
     {
         int colSum = 0;
-        for (int i = 0; i < square.length-1; i++)
+        for (int i = 0; i < numRows; i++)
         {
             colSum += square[i][col];
-    
+            
         }
+        return colSum;
     }
     
     public int[] addColumns()
     {
+        int[] colSums = new int[numCols];
+        for (int i = 0; i < numCols; i++)
+        {
+            colSums[i] = addColumn(i);
+        }
+        return colSums;
+    }
+    
+    public int addDiagonal(int Diag)
+    {
+        int diagSum = 0;
+        int row = 0, col = 0;
+        for (int i = 0; i < numCols; row++, col++, i++)
         
     }
     
+    public int[] addDiagonals()
+    {
+        
+    }
 }
