@@ -31,7 +31,9 @@ public class MagicSquare
     
     public void setMagicSquare(int [][] array)
     {
-        
+        square = array;
+        numRows = array.length;
+        numCols = array[0].length;
     }
     // support methods
     
