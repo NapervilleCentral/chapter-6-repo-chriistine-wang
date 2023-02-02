@@ -20,7 +20,53 @@ public class MagicSquare
     
     public boolean isMagic()
     {
+        int[] rowsCheck = addRows();
+        int[] colsCheck = addColumns();
+        int[] diagCheck = addDiagonals();
+        int target;
+        boolean check = false;
         
+        for (int i = 0; i < rowsCheck.length-1; i++)
+        {
+            target = rowsCheck[0];
+            
+            if (target == rowsCheck[i])
+            {
+                check = true;
+            }
+            else
+            {
+                check = false;
+            }
+        }
+        for (int i = 0; i < colsCheck.length-1; i++)
+        {
+            target = colsCheck[0];
+            
+            if (target == colsCheck[i])
+            {
+                check = true;
+            }
+            else
+            {
+                check = false;
+            }
+        }
+        for (int i = 0; i < diagCheck.length-1; i++)
+        {
+            target = diagCheck[0];
+            
+            if (target == diagCheck[i])
+            {
+                check = true;
+            }
+            else
+            {
+                check = false;
+            }
+        }
+        
+        return check;
     }
     
     public int getMagicNum()// gets the magic number of 1 row/col/diag, etc
@@ -49,10 +95,15 @@ public class MagicSquare
     public int[] addRows()
     {
         int[] rowSums = new int[numRows];
-        
+        int target;
         for (int i = 0; i < numRows; i++)
         {
             rowSums[i] = addRow(i);
+        }
+        for (int i = 0; i < rowSums.length; i++)
+        {
+            target = rowSums[i];
+            
         }
         return rowSums;
     }
@@ -78,16 +129,22 @@ public class MagicSquare
         return colSums;
     }
     
-    public int addDiagonal(int Diag)
-    {
-        int diagSum = 0;
-        int row = 0, col = 0;
-        for (int i = 0; i < numCols; row++, col++, i++)
-        
-    }
-    
     public int[] addDiagonals()
     {
+        int diagSum = 0;
+        int diagSum2 = 0;
         
+        for (int i=0; i < numCols; i++, i++)
+        {
+            diagSum += square[i][i];
+        }
+        for (int i=numRows; i > 0; i--)
+        {
+            diagSum2 += square[i][i];
+        }
+        
+        int[] diagSums = {diagSum, diagSum2};
+        
+        return diagSums;
     }
 }
