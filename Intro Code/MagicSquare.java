@@ -138,8 +138,9 @@ public class MagicSquare
         {
             diagSum += square[i][i];
         }
-        for (int i=numRows; i > 0; i--)
+        for (int i=numCols -1; i > 0; i--)
         {
+            System.out.print(i);
             diagSum2 += square[i][i];
         }
         

@@ -23,8 +23,16 @@ public static void main (String[] args)
     //ArrayList notes
     /**/
     // <> indicates the type of ArrayList
+    //diamond syntax
     ArrayList <String> farm = new ArrayList<>();
+    //dont set size
 
+    //ArrayList stuff = new ArrayList();//enter mix types String, Student, Address
+    //String word = (String)stuff.get(0); //needs to cast it
+    
+    //AL only takes objects
+    // ArrayList<int> grades = new ArrayList<>(); doesnt work, do Integer
+    
     farm.add("cow");farm.add("chicken");
     for (int i = 0; i<20;i++)
     {
@@ -40,17 +48,22 @@ public static void main (String[] args)
     farm.add("pig");farm.add("pig");farm.add("pig");
 
     System.out.println(farm);
-    /*
+    System.out.println(farm.size());
+    
+    //.length is constant., .size() is method, bc for AL length changing
+    
     int count = 0;
     for (int i = 0; i<farm.size();i++)
     {
-        if(farm.get(i).equals("chicken"))
-            count++;
+        //if(farm.get(i).equals("chicken"))
+            //count++;
 
         if (farm.get(i).equals("chicken"))
-            farm.remove(i);
-
-
+        {
+            farm.remove(i); // if u remove smt, size shrink
+        }
+        i--;
+        //When u dont remove increm
     }
 
     System.out.println("There are " + count+ " chickens");
