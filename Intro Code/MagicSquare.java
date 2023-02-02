@@ -33,6 +33,7 @@ public class MagicSquare
             if (target == rowsCheck[i])
             {
                 check = true;
+                magicNum = target;
             }
             else
             {
@@ -46,6 +47,7 @@ public class MagicSquare
             if (target == colsCheck[i])
             {
                 check = true;
+                magicNum = target;
             }
             else
             {
@@ -59,6 +61,7 @@ public class MagicSquare
             if (target == diagCheck[i])
             {
                 check = true;
+                magicNum = target;
             }
             else
             {
@@ -140,7 +143,6 @@ public class MagicSquare
         }
         for (int i=numCols -1; i > 0; i--)
         {
-            System.out.print(i);
             diagSum2 += square[i][i];
         }
         
