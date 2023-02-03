@@ -23,6 +23,7 @@ public class MagicSquare
         int[] rowsCheck = addRows();
         int[] colsCheck = addColumns();
         int[] diagCheck = addDiagonals();
+        int rowTotal=0, colTotal=0, diagTotal=0;
         int target;
         boolean check = false;
         
@@ -32,12 +33,7 @@ public class MagicSquare
             
             if (target == rowsCheck[i])
             {
-                check = true;
-                magicNum = target;
-            }
-            else
-            {
-                check = false;
+                rowTotal = target;
             }
         }
         for (int i = 0; i < colsCheck.length-1; i++)
@@ -46,27 +42,27 @@ public class MagicSquare
             
             if (target == colsCheck[i])
             {
-                check = true;
-                magicNum = target;
-            }
-            else
-            {
-                check = false;
+                colTotal = target;
             }
         }
-        for (int i = 0; i < diagCheck.length-1; i++)
+                    
+            if (diagCheck[0] == diagCheck[1])
+            {
+                diagTotal = diagCheck[0];
+            }
+        
+        
+        if (rowTotal == colTotal && colTotal == diagTotal)
         {
-            target = diagCheck[0];
-            
-            if (target == diagCheck[i])
-            {
-                check = true;
-                magicNum = target;
-            }
-            else
-            {
-                check = false;
-            }
+            if (rowTotal != 0)
+                {
+                    magicNum = rowTotal;
+                    check = true;
+                }
+        }
+        else
+        {
+            check = false;
         }
         
         return check;
@@ -98,16 +94,12 @@ public class MagicSquare
     public int[] addRows()
     {
         int[] rowSums = new int[numRows];
-        int target;
+        
         for (int i = 0; i < numRows; i++)
         {
             rowSums[i] = addRow(i);
         }
-        for (int i = 0; i < rowSums.length; i++)
-        {
-            target = rowSums[i];
-            
-        }
+        
         return rowSums;
     }
     
@@ -136,14 +128,15 @@ public class MagicSquare
     {
         int diagSum = 0;
         int diagSum2 = 0;
+
         
-        for (int i=0; i < numCols; i++, i++)
+        for (int i=0; i < numCols; i++)
         {
             diagSum += square[i][i];
         }
-        for (int i=numCols -1; i > 0; i--)
+        for (int i = numCols-1 ; i > 0; i--)
         {
-            diagSum2 += square[i][i];
+            diagSum2 += square[numCols-i][i];
         }
         
         int[] diagSums = {diagSum, diagSum2};

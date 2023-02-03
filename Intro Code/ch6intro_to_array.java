@@ -24,7 +24,7 @@ public class ch6intro_to_array
         //arrays are objects
         // so pass by reference, makes it faster (1 obj vs 19 pieces of info)
         
-                mathy useful = new mathy();
+                //mathy useful = new mathy();
                 int x = 50;
                 int[] nums = new int[20];
                 int[] values = new int[MAX];

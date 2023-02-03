@@ -28,7 +28,7 @@ public class MagicSquareTest
         {3,4,8}
     };
      
-    //magic (64)
+    //magic (65)
     int [][] square3 = {
     {11,24, 7, 20,3},
     {4,12, 25, 8,16},
