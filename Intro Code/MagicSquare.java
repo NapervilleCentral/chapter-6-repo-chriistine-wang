@@ -133,14 +133,14 @@ public class MagicSquare
         for (int i=0; i < numCols; i++)
         {
             diagSum += square[i][i];
-        }
-        for (int i = numCols-1 ; i > 0; i--)
-        {
-            diagSum2 += square[numCols-i][i];
+            diagSum2 += square[numCols - 1 - i][i];
         }
         
         int[] diagSums = {diagSum, diagSum2};
         
+        for (int i: diagSums)
+            System.out.println(i);
+
         return diagSums;
     }
 }

@@ -33,7 +33,7 @@ public static void main (String[] args)
     //AL only takes objects
     // ArrayList<int> grades = new ArrayList<>(); doesnt work, do Integer
     
-    farm.add("cow");farm.add("chicken");
+    farm.add("cow");farm.add("chicken"); //adds to end
     for (int i = 0; i<20;i++)
     {
         farm.add("cow");
@@ -53,22 +53,45 @@ public static void main (String[] args)
     //.length is constant., .size() is method, bc for AL length changing
     
     int count = 0;
-    for (int i = 0; i<farm.size();i++)
+    for (int i = 0; i<farm.size();)//i++)
     {
         //if(farm.get(i).equals("chicken"))
             //count++;
-
+        /*
         if (farm.get(i).equals("chicken"))
         {
-            farm.remove(i); // if u remove smt, size shrink
+            farm.remove(i); // if u remove smt, size(index) shrink 
+            //i--;
         }
-        i--;
-        //When u dont remove increm
+        else
+            i++;
+        //increase only when u dont remove */
     }
-
+        
+    //collapses, moves w u
+    for (int i = farm.size()-1; i>=0; i--)
+    {
+        if (farm.get(i).equals("chicken"))
+        {
+            farm.remove(i);
+        }
+    }
     System.out.println("There are " + count+ " chickens");
+    
+    //set method will replace at index and return the object at said index
+    String animal = farm.set(5, "Llama");
+    //add (index, obj) add at said index
+    farm.add(7, "llama");    
+    System.out.println(animal + "===" +farm);
+    
+    ArrayList <Integer> numbers = new ArrayList<>();
+    
+    insertInOrder(numbers,2);
+    insertInOrder(numbers,3);
+    insertInOrder(numbers,1); 
+    
+    System.out.println(numbers);
 
-    System.out.println(farm);
     /*
     ArrayList <String> list = new ArrayList<>();
 
@@ -90,8 +113,29 @@ public static void main (String[] args)
     }/* */
 
 }// end of main
+public static void insertInOrder(ArrayList <Integer> numbers, Integer num)
+    {
+        if (numbers.size() == 0)
+        {
+            numbers.add(num);
+            return;
+        }
+        
+        
+            boolean found = false;
+            for(int i = 0; (i<numbers.size() && found == false); i++){
+                if (numbers.get(i) > num)
+                {
+                    numbers.add(i, num);
+                    return;
+                }
+            }
+            
+            numbers.add(num); //(goes at end anyway);
+        
+    }
+}
 
-}// end of class
 
 
 
