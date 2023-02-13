@@ -31,9 +31,19 @@ public class Coin
       face = (int) (Math.random() * 2);
    }
 
+   public double getValue()
+   {
+       return amount;
+   }
+   
+   public char getType()
+   {
+       return type;
+   }
+   
    /**-----------------------------------------------------------------
    *  Returns true if the current face of the coin is heads.
-   		@return boolean, true if heads
+           @return boolean, true if heads
    */
    public boolean isHeads ()
    {
@@ -42,7 +52,7 @@ public class Coin
 
    /**-----------------------------------------------------------------
    *  Returns the current face of the coin as a string.
-   		@return String
+           @return String
    */
    public String toString()
    {

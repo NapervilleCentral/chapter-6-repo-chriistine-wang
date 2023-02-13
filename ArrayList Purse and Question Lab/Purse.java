@@ -3,37 +3,39 @@ import java.util.ArrayList;
 
 public class Purse
 {
-	//private ArrayList
+    private ArrayList<Coin> pocket = new ArrayList();
+ 
+    public Purse()
+    {
+        //pocket.add(coin1);
+    }
 
-
-	public Purse (){ };
-
-	public Purse (Coin acoin)
-	{
-		change.add(acoin);
-	}
+    public Purse (Coin acoin)
+    {
+        pocket.add(acoin);
+    }
   /** precondition: Coin will be initialized (value and name) correctly
   *               each variable will have a value
-   	  postcondition: Puts the Coin into the array list change
+         postcondition: Puts the Coin into the array list pocket
   */
-	public void add (Coin acoin)
-	{
+    public void add (Coin aCoin)
+    {
+        
 
 
-
-	}
+    }
 
   /** Returns the total value of the coins in the array
   *                 list change
-  		@return ???
+          @return ???
   */
-	public double getTotal()
-	{
+    public double getTotal()
+    {
 
 
-		return 0;
+        return 0;
 
-	}
+    }
 
 
 
