@@ -13,7 +13,7 @@ public class Coin
 
    private int face;
    private double amount;
-   private char type;
+   private int type;
 
    /**-----------------------------------------------------------------
    *  Sets up the coin by flipping it initially.
@@ -36,11 +36,15 @@ public class Coin
        return amount;
    }
    
-   public char getType()
+   public int getType()
    {
        return type;
    }
    
+   public int setType(int choice)
+   {
+       return type = choice;
+   }
    /**-----------------------------------------------------------------
    *  Returns true if the current face of the coin is heads.
            @return boolean, true if heads
