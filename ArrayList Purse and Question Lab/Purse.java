@@ -21,10 +21,34 @@ public class Purse
     public void add (Coin aCoin)
     {
         
-
-
+        pocket.add(aCoin);
+    }
+    
+    public void remove (Coin aCoin)
+    {
+        
     }
 
+    public int getTotalPennies()
+    {
+        
+    }
+    
+    public int getTotalNickels()
+    {
+        
+    }
+    
+    public int getTotalDimes()
+    {
+    
+    }
+    
+    public int getTotalQuarters()
+    {
+        
+    }
+    
   /** Returns the total value of the coins in the array
   *                 list change
           @return ???
