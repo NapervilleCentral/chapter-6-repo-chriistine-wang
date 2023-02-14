@@ -7,12 +7,17 @@ public class Purse
  
     public Purse()
     {
-        //pocket.add(coin1);
+        
     }
 
-    public Purse (Coin acoin)
+    public Purse (Coin aCoin)
     {
-        pocket.add(acoin);
+        aCoin.setType(4);
+        pocket.add(aCoin);
+        pocket.add(aCoin);
+        pocket.add(aCoin);
+        pocket.add(aCoin);
+        pocket.add(aCoin);
     }
   /** precondition: Coin will be initialized (value and name) correctly
   *               each variable will have a value
@@ -20,7 +25,7 @@ public class Purse
   */
     public void add (Coin aCoin)
     {
-        
+        //aCoin 
         pocket.add(aCoin);
     }
     
@@ -28,15 +33,29 @@ public class Purse
     {
         
     }
-
+    // for each coin
+    // if coin c.getType = Penny
+    // count++
     public int getTotalPennies()
     {
-        
+        int count = 0;
+        for (Coin aCoin: pocket)
+            if (aCoin.getType() == 1)
+            {
+                count++;
+            }
+        return count;
     }
     
     public int getTotalNickels()
     {
-        
+        int count = 0;
+        for (Coin aCoin: pocket)
+            if (aCoin.getType() == 1)
+            {
+                count++;
+            }
+        return count;
     }
     
     public int getTotalDimes()

@@ -10,7 +10,7 @@ public class Coin
 {
    private final int HEADS = 0;
    private final int TAILS = 1;
-
+   
    private int face;
    private double amount;
    private int type;
@@ -21,6 +21,22 @@ public class Coin
    public Coin ()
    {
       flip();
+      if (type == 1)
+      {
+          this.amount = 0.01;
+      }
+      else if (type == 2)
+      {
+          this.amount = 0.05;
+      }
+      else if (type == 3)
+      {
+          this.amount = 0.10;
+      }
+      else if (type == 4)
+      {
+          this.amount = 0.25;
+      }
    }
 
    /**-----------------------------------------------------------------
