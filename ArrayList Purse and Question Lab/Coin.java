@@ -45,6 +45,8 @@ public class Coin
       getValue();
       getType();
       getName();
+      setType(type);
+      
    }
 
    /**-----------------------------------------------------------------
@@ -69,9 +71,9 @@ public class Coin
    {
        return name;
    }
-   public int setType(int choice)
+   public void setType(int choice)
    {
-       return type = choice;
+       type = choice;
    }
    /**-----------------------------------------------------------------
    *  Returns true if the current face of the coin is heads.

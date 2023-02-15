@@ -34,9 +34,7 @@ public class Purse
     {
         pocket.remove(aCoin);
     }
-    // for each coin
-    // if coin c.getType = Penny
-    // count++
+    
     public double getTotalPennies()
     {
         double count = 0;
@@ -89,8 +87,6 @@ public class Purse
     {
         double total = 0;
         
-        //total = (getTotalPennies() * 0.01) + (getTotalNickels() * 0.05) + (getTotalDimes() * 0.10) 
-        //+ (getTotalQuarters() * 0.25);
         
             for (Coin aCoin: pocket)
                 total += aCoin.getValue();
