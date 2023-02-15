@@ -14,29 +14,37 @@ public class Coin
    private int face;
    private double amount;
    private int type;
+   private String name;
 
    /**-----------------------------------------------------------------
    *  Sets up the coin by flipping it initially.
    */
    public Coin ()
    {
-      flip();
-      if (type == 1)
+       if (type == 1)
       {
           this.amount = 0.01;
+          this.name = "Penny";
       }
       else if (type == 2)
       {
           this.amount = 0.05;
+          this.name = "Nickel";
       }
       else if (type == 3)
       {
           this.amount = 0.10;
+          this.name = "Dime";
       }
       else if (type == 4)
       {
           this.amount = 0.25;
+          this.name = "Quarter";
       }
+      //are these needed?
+      getValue();
+      getType();
+      getName();
    }
 
    /**-----------------------------------------------------------------
@@ -57,6 +65,10 @@ public class Coin
        return type;
    }
    
+   public String getName()
+   {
+       return name;
+   }
    public int setType(int choice)
    {
        return type = choice;
@@ -71,17 +83,11 @@ public class Coin
    }
 
    /**-----------------------------------------------------------------
-   *  Returns the current face of the coin as a string.
-           @return String
+   *  Returns the value and type of the coin.
+      @return String
    */
    public String toString()
    {
-      String faceName;
-      if (face == HEADS)
-         faceName = "Heads";
-      else
-         faceName = "Tails";
-
-      return faceName;
+      return name + " " + amount;
    }
 }

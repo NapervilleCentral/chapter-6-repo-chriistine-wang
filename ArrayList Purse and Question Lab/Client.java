@@ -10,20 +10,32 @@ public class Client
     public static void main (String args[])
     {
         Scanner kb = new Scanner(System.in);
-        String choice = kb.nextLine();
         Purse wallet = new Purse();
         Coin aCoin = new Coin();
-        System.out.println("Menu ___________\nA - Add a Coin \n" +
-         "R - Remove a Coin\nX - Display Purse");
-        
-        if (choice == "A")
+    
+        while (!(choice.equals("X")))
         {
-            System.out.println("Add what type of coin? 1 - Penny\n2 - Nickel\n3 - Dime\n4 - Quarter");
-            aCoin.setType(kb.nextInt());
-            wallet.add(aCoin);
+            System.out.println("Menu ___________\nA - Add a Coin \n" +
+            "R - Remove a Coin\nD - Display Purse\nX - Exit");
+            choice = kb.nextLine();
+            if (choice.equals("A"))
+            {
+                System.out.println("Add what type of coin?\n 1 - Penny\n2 - Nickel\n3 - Dime\n4 - Quarter");
+                aCoin.setType(kb.nextInt());
+                wallet.add(aCoin);
+            }
+            if (choice.equals("R"))
+            {
+                System.out.println("Remove what type of coin?\n 1 - Penny\n2 - Nickel\n3 - Dime\n4 - Quarter");
+                aCoin.setType(kb.nextInt());
+                wallet.remove(aCoin);
+            }
+            //what does display all the coins mean?
+            if (choice.equals("D"))
+            {
+                wallet.toString();
+            }
         }
-        
-         
         
     }
 }

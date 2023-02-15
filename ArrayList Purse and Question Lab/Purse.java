@@ -19,10 +19,11 @@ public class Purse
         pocket.add(aCoin);
         pocket.add(aCoin);
     }
-  /** precondition: Coin will be initialized (value and name) correctly
-  *               each variable will have a value
-         postcondition: Puts the Coin into the array list pocket
-  */
+    // did i do add and remove methods right??
+      /** precondition: Coin will be initialized (value and name) correctly
+      *               each variable will have a value
+             postcondition: Puts the Coin into the array list pocket
+      */
     public void add (Coin aCoin)
     {
         //aCoin 
@@ -31,14 +32,14 @@ public class Purse
     
     public void remove (Coin aCoin)
     {
-        
+        pocket.remove(aCoin);
     }
     // for each coin
     // if coin c.getType = Penny
     // count++
-    public int getTotalPennies()
+    public double getTotalPennies()
     {
-        int count = 0;
+        double count = 0;
         for (Coin aCoin: pocket)
             if (aCoin.getType() == 1)
             {
@@ -47,25 +48,37 @@ public class Purse
         return count;
     }
     
-    public int getTotalNickels()
+    public double getTotalNickels()
     {
-        int count = 0;
+        double count = 0;
         for (Coin aCoin: pocket)
-            if (aCoin.getType() == 1)
+            if (aCoin.getType() == 2)
             {
                 count++;
             }
         return count;
     }
     
-    public int getTotalDimes()
+    public double getTotalDimes()
     {
-    
+        double count = 0;
+        for (Coin aCoin: pocket)
+            if (aCoin.getType() == 3)
+            {
+                count++;
+            }
+        return count;
     }
     
-    public int getTotalQuarters()
+    public double getTotalQuarters()
     {
-        
+        double count = 0;
+        for (Coin aCoin: pocket)
+            if (aCoin.getType() == 4)
+            {
+                count++;
+            }
+        return count;
     }
     
   /** Returns the total value of the coins in the array
@@ -74,13 +87,17 @@ public class Purse
   */
     public double getTotal()
     {
-
-
-        return 0;
+        double total = 0;
+        
+        //total = (getTotalPennies() * 0.01) + (getTotalNickels() * 0.05) + (getTotalDimes() * 0.10) 
+        //+ (getTotalQuarters() * 0.25);
+        
+            for (Coin aCoin: pocket)
+                total += aCoin.getValue();
+        
+        return total;
 
     }
-
-
 
  /**
  *  Returns the all objects in the array list as Strings
@@ -88,7 +105,13 @@ public class Purse
 
    public String toString()
    {
-      return " --";
+      String result;
+      
+      result = getTotalPennies() + " Pennies\n" + getTotalNickels() + " Nickels\n"
+      + getTotalDimes() + " Dimes\n" + getTotalQuarters() + " Quarters\n"
+      + "Total: $" + getTotal();
+      
+      return result;
    }
 
 }
