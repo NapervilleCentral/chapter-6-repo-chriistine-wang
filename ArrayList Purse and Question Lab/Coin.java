@@ -10,8 +10,8 @@ public class Coin
 {
    private final int HEADS = 0;
    private final int TAILS = 1;
-   
    private int face;
+   
    private double amount;
    private int type;
    private String name;
@@ -19,7 +19,24 @@ public class Coin
    /**-----------------------------------------------------------------
    *  Sets up the coin by flipping it initially.
    */
-   public Coin ()
+   public Coin (int coinType)
+   {
+      this.type = coinType;
+      setValue();
+      getValue();
+      getName();
+      
+   }
+
+   /**-----------------------------------------------------------------
+   *  Flips the coin by randomly choosing a face value.
+   */
+   public void flip ()
+   {
+      face = (int) (Math.random() * 2);
+   }
+    
+   public void setValue()
    {
        if (type == 1)
       {
@@ -41,22 +58,10 @@ public class Coin
           this.amount = 0.25;
           this.name = "Quarter";
       }
-      //are these needed?
-      getValue();
-      getType();
-      getName();
-      setType(type);
-      
+      else
+          this.amount = 0.0;
    }
-
-   /**-----------------------------------------------------------------
-   *  Flips the coin by randomly choosing a face value.
-   */
-   public void flip ()
-   {
-      face = (int) (Math.random() * 2);
-   }
-
+   
    public double getValue()
    {
        return amount;
@@ -71,10 +76,7 @@ public class Coin
    {
        return name;
    }
-   public void setType(int choice)
-   {
-       type = choice;
-   }
+   
    /**-----------------------------------------------------------------
    *  Returns true if the current face of the coin is heads.
            @return boolean, true if heads

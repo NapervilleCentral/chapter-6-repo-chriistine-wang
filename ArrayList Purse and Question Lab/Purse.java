@@ -1,5 +1,6 @@
 
 import java.util.ArrayList;
+import java.text.DecimalFormat;
 
 public class Purse
 {
@@ -7,32 +8,32 @@ public class Purse
  
     public Purse()
     {
-        
+        for (int i = 0; i < 5; i++)
+        {
+            pocket.add(new Coin(4));
+        }
     }
 
-    public Purse (Coin aCoin)
-    {
-        aCoin.setType(4);
-        pocket.add(aCoin);
-        pocket.add(aCoin);
-        pocket.add(aCoin);
-        pocket.add(aCoin);
-        pocket.add(aCoin);
-    }
-    // did i do add and remove methods right??
-      /** precondition: Coin will be initialized (value and name) correctly
+    /** precondition: Coin will be initialized (value and name) correctly
       *               each variable will have a value
              postcondition: Puts the Coin into the array list pocket
       */
     public void add (Coin aCoin)
     {
-        //aCoin 
         pocket.add(aCoin);
     }
     
-    public void remove (Coin aCoin)
+    public void remove (int coinType)
     {
-        pocket.remove(aCoin);
+        for (int i = 0; i < pocket.size(); i++)
+        {
+            Coin aCoin = pocket.get(i);
+            if (aCoin.getType() == coinType)
+            {
+                pocket.remove(i);
+                return;
+            }
+        }
     }
     
     public double getTotalPennies()
@@ -81,15 +82,14 @@ public class Purse
     
   /** Returns the total value of the coins in the array
   *                 list change
-          @return ???
+          @return total
   */
     public double getTotal()
     {
         double total = 0;
         
-        
-            for (Coin aCoin: pocket)
-                total += aCoin.getValue();
+        for (Coin aCoin: pocket)
+            total += aCoin.getValue();
         
         return total;
 
@@ -101,14 +101,16 @@ public class Purse
 
    public String toString()
    {
-      String result;
-      
+    String result = "";
+    DecimalFormat df = new DecimalFormat("#0.00");
+    
       result = getTotalPennies() + " Pennies\n" + getTotalNickels() + " Nickels\n"
       + getTotalDimes() + " Dimes\n" + getTotalQuarters() + " Quarters\n"
-      + "Total: $" + getTotal();
+      + "Total: $" + df.format(getTotal());
       
       return result;
-   }
+
+    }
 
 }
 //end of purse

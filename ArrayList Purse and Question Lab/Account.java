@@ -34,7 +34,22 @@ public class Account implements bofA, Comparable //lockable, atm ,Comparable
    public Account()
    {
    }
-
+    
+   public void reduceHash()
+   {
+       
+   }
+   
+   public int hashCode()
+   {
+       int code = 0;
+       code = acctNumber;
+       code *= name.charAt(name.length() - 1);
+       code += name.charAt(0);
+       code *= 71;
+       return code;
+   }
+   
    /**-----------------------------------------------------------------
    //  Validates the transaction, then deposits the specified amount
    //  into the account. Returns the new balance.
@@ -126,7 +141,7 @@ public class Account implements bofA, Comparable //lockable, atm ,Comparable
    */
    public String toString ()
    {
-      return (acctNumber + "\t" + name + "\t" + fmt.format(balance));
+      return (name + " - " + acctNumber +"/" + hashCode() + " - " + fmt.format(balance));
    }
 
 
@@ -196,15 +211,21 @@ public class Account implements bofA, Comparable //lockable, atm ,Comparable
           */
     public int compareTo (Object o) 
     {
-        // object can be anything, like dog can be any breed
-        // object like a container. polymorphic.
-        Account a = (Account)o; //casting object 
-        return (this.acctNumber - a.acctNumber);
-        
-        
-        //return 0 -1 before, 1 after
-
-
+        Account other = (Account)o;
+        if (this.acctNumber < other.acctNumber)
+        {
+            return -1;
+        }
+        else if (this.acctNumber > other.acctNumber)
+        {
+            return 1;
+        }
+        else
+        {
+            return 0;
+        }
+        //Account a = (Account)o; //casting object 
+        //return (this.acctNumber - a.acctNumber);
     }//end of compareTo
 }//end of class
 

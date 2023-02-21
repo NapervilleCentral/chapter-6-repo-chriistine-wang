@@ -1,19 +1,19 @@
 #BlueJ class context
 comment0.target=Coin
-comment1.params=
-comment1.target=Coin()
+comment1.params=coinType
+comment1.target=Coin(int)
 comment1.text=-----------------------------------------------------------------\r\n\ \ Sets\ up\ the\ coin\ by\ flipping\ it\ initially.\r\n
 comment2.params=
 comment2.target=void\ flip()
 comment2.text=-----------------------------------------------------------------\r\n\ \ Flips\ the\ coin\ by\ randomly\ choosing\ a\ face\ value.\r\n
 comment3.params=
-comment3.target=double\ getValue()
+comment3.target=void\ setValue()
 comment4.params=
-comment4.target=int\ getType()
+comment4.target=double\ getValue()
 comment5.params=
-comment5.target=java.lang.String\ getName()
-comment6.params=choice
-comment6.target=void\ setType(int)
+comment5.target=int\ getType()
+comment6.params=
+comment6.target=java.lang.String\ getName()
 comment7.params=
 comment7.target=boolean\ isHeads()
 comment7.text=-----------------------------------------------------------------\r\n\ \ Returns\ true\ if\ the\ current\ face\ of\ the\ coin\ is\ heads.\r\n\ \ \ \ \ \ \ \ \ \ \ @return\ boolean,\ true\ if\ heads\r\n
