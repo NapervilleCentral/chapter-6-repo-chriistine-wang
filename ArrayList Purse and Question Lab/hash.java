@@ -5,11 +5,7 @@
  * @author (your name)
  * @version (a version number or a date)
  */
-// what is insertionSort
-// what is comparable
-// what is Sorts in sortmethod
-// what is compareto a string
-// why we use interfaces
+
 public class hash
 {
     public static void main (String[] args)
@@ -28,11 +24,15 @@ public class hash
         Account [] people = {p1, p2, p3, p4, p5, p6, p7, p8, p9, p10};
         
         Sorts.insertionSort(people);
-   
+        
+        
         for (Account a : people)
         {
             System.out.println(a + ", ");
         }
+        
+        
+        System.out.println("\n________________________________________\n");
         
         Account [] hashes = new Account[7 * people.length];
         
