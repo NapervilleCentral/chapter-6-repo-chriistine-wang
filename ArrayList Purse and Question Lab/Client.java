@@ -45,4 +45,84 @@ public class Client
         }
         
     }
+    /**
+     * Output:
+     * 
+     * Menu ___________
+        A - Add a Coin 
+        R - Remove a Coin
+        D - Display Purse
+        X - Exit
+        D
+        0.0 Pennies
+        0.0 Nickels
+        0.0 Dimes
+        5.0 Quarters
+        Total: $1.25
+        Menu ___________
+        A - Add a Coin 
+        R - Remove a Coin
+        D - Display Purse
+        X - Exit
+        A
+        Add what type of coin?
+        1 - Penny
+        2 - Nickel
+        3 - Dime
+        4 - Quarter
+        2
+        Menu ___________
+        A - Add a Coin 
+        R - Remove a Coin
+        D - Display Purse
+        X - Exit
+        A
+        Add what type of coin?
+        1 - Penny
+        2 - Nickel
+        3 - Dime
+        4 - Quarter
+        3
+        Menu ___________
+        A - Add a Coin 
+        R - Remove a Coin
+        D - Display Purse
+        X - Exit
+        R
+        Remove what type of coin?
+        1 - Penny
+        2 - Nickel
+        3 - Dime
+        4 - Quarter
+        4
+        Menu ___________
+        A - Add a Coin 
+        R - Remove a Coin
+        D - Display Purse
+        X - Exit
+        R
+        Remove what type of coin?
+        1 - Penny
+        2 - Nickel
+        3 - Dime
+        4 - Quarter
+        2
+        Menu ___________
+        A - Add a Coin 
+        R - Remove a Coin
+        D - Display Purse
+        X - Exit
+        D
+        0.0 Pennies
+        0.0 Nickels
+        1.0 Dimes
+        4.0 Quarters
+        Total: $1.10
+        Menu ___________
+        A - Add a Coin 
+        R - Remove a Coin
+        D - Display Purse
+        X - Exit
+        X
+     */
 }

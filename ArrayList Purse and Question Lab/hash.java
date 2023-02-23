@@ -45,5 +45,21 @@ public class hash
             System.out.println(p);
         
         System.out.println(p9.compareTo(p10));
+        
+        
+        // hashCode method:
+        /**
+         * 
+               public int hashCode()
+               {
+                   int code = 0;
+                   code = acctNumber;
+                   code *= name.charAt(name.length() - 1);
+                   code += name.charAt(0);
+                   code *= 71;
+                   return code;
+               }
+   
+         */
     }
 }
