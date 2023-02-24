@@ -21,6 +21,70 @@ public class ch6intro_to_ArrayList
 public static void main (String[] args)
 {
     //ArrayList notes
+    
+    double[] table = new double[1000];
+    
+    ArrayList<String> list = new ArrayList<String>();
+    list.add("dog");
+    list.add("apple");
+    list.add("cat");
+    list.add("banana");
+     for (int i = 1; i < list.size(); i++) {
+            String current = list.get(i);
+            int j = i - 1;
+            while (j >= 0 && list.get(j).compareTo(current) > 0) {
+                list.set(j + 1, list.get(j));
+                j--;
+            }
+            list.set(j + 1, current);
+        }
+        
+    System.out.println(list);
+    
+    ArrayList<String> list1 = new ArrayList<String>();
+    
+    list1.add("d");
+    list1.add("a");
+    list1.add("c");
+    list1.add("b");
+    list1.add("eagle");
+    list1.add("xylo");
+    list1.add("apple");
+    
+    /*
+    for (int index = 1; index < list1.size(); index++) {
+        String temp = list1.get(index);
+        int position = index;
+        
+        while (position > 0 && list1.get(position-1).compareTo(temp) > 0) {
+            list1.set(position, list1.get(position-1));
+            position--;
+        }
+        list1.set(position, temp);
+    }
+    
+    System.out.println(list1); */
+    
+    for (int i = 1; i > list1.size(); i++) {
+        String temp = list1.get(i);
+        int position = i;
+        
+        while (position > 0 && list1.get(position-1).compareTo(temp) > 0) {
+            list1.set(position, list1.get(position-1));
+            position--;
+        }
+        list1.set(position, temp);
+    }
+    
+    System.out.println(list1);
+    int rows = 2;
+    int cols = 3;
+    int[][] arr = new int[rows][cols];
+    
+    int [][] lol = new int[3][3];
+    
+    double[] hash = new double[1000];
+    
     /**/
     // <> indicates the type of ArrayList
     //diamond syntax
@@ -134,6 +198,7 @@ public static void insertInOrder(ArrayList <Integer> numbers, Integer num)
             numbers.add(num); //(goes at end anyway);
         
     }
+    
 }
 
 

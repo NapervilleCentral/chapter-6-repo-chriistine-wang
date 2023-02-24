@@ -38,17 +38,17 @@ public class Sorts
    {
       for (int index = 1; index < numbers.length; index++)
       {
-         int key = numbers[index];
+         int temp = numbers[index];
          int position = index;
 
          // shift larger values to the right
-         while (position > 0 && numbers[position-1] > key)
+         while (position > 0 && numbers[position-1] > temp)
          {
             numbers[position] = numbers[position-1];
             position--;
          }
 
-         numbers[position] = key;
+         numbers[position] = temp;
       }
    }
 
